@@ -23,16 +23,6 @@ export default function ServicesSection() {
       description: "Celebrate Indian festivals with authentic traditional dishes prepared with care.",
       icon: <Award className="h-10 w-10 text-orange-600" />,
     },
-    {
-      title: "Cooking Classes",
-      description: "Learn the art of Indian cooking with our expert chefs in interactive cooking sessions.",
-      icon: <Utensils className="h-10 w-10 text-orange-600" />,
-    },
-    {
-      title: "Meal Prep Services",
-      description: "Weekly meal preparation services featuring healthy and flavorful Indian cuisine.",
-      icon: <Clock className="h-10 w-10 text-orange-600" />,
-    },
   ]
 
   return (

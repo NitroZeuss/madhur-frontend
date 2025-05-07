@@ -24,7 +24,7 @@ export default function AboutSection() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Culinary Journey</h2>
             <p className="text-gray-600 mb-6">
               Founded in 2010, Madhur Caterers began as a small family-owned business with a passion for authentic
-              Indian cuisine. Our founder, Chef Raj Sharma, brought generations of family recipes from various regions
+              Indian cuisine. Our founder, Mr Rajesh Chari, brought generations of family recipes from various regions
               of India to create a unique culinary experience.
             </p>
             <p className="text-gray-600 mb-6">

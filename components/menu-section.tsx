@@ -37,7 +37,6 @@ export default function MenuSection() {
       } catch (err) {
         console.error("Error fetching menu items:", err)
         setError("Unable to load menu items. Please try again later.")
-        setLoading(false)
 
         // Fallback data for preview
         setMenuItems([
@@ -90,6 +89,7 @@ export default function MenuSection() {
             spice_level: 1,
           },
         ])
+        setLoading(false)
       }
     }
 
@@ -98,9 +98,10 @@ export default function MenuSection() {
 
   const categories = [
     { id: "all", name: "All Items" },
-    { id: "appetizer", name: "Appetizers" },
+    { id: "Starters", name: "Starters" },
     { id: "main", name: "Main Course" },
     { id: "dessert", name: "Desserts" },
+    { id: "Custom", name: "Custom" },
   ]
 
   const filteredItems =
@@ -135,66 +136,74 @@ export default function MenuSection() {
 
           {categories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {loading
-                  ? // Loading skeletons
-                    Array(6)
-                      .fill(0)
-                      .map((_, index) => (
-                        <Card key={index} className="overflow-hidden">
-                          <Skeleton className="h-48 w-full" />
+              {category.id === "Custom" ? (
+                <div className="bg-orange-50 p-6 rounded-lg shadow-sm text-center text-gray-800 text-lg font-medium">
+                  Let’s talk about what suits your event! Reach out to us at{" "}
+                  <a href="tel:+919822739077" className="text-orange-600 underline font-semibold">
+                    +91 98227 39077
+                  </a>
+                  .
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {loading
+                    ? Array(6)
+                        .fill(0)
+                        .map((_, index) => (
+                          <Card key={index} className="overflow-hidden">
+                            <Skeleton className="h-48 w-full" />
+                            <CardContent className="p-4 md:p-6">
+                              <Skeleton className="h-6 w-3/4 mb-2" />
+                              <Skeleton className="h-4 w-full mb-1" />
+                              <Skeleton className="h-4 w-full mb-1" />
+                              <Skeleton className="h-4 w-2/3 mb-4" />
+                              <Skeleton className="h-6 w-1/4" />
+                            </CardContent>
+                          </Card>
+                        ))
+                    : (category.id === "all" ? menuItems : filteredItems).map((item) => (
+                        <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                          <div className="relative h-48 w-full bg-amber-100">
+                            {item.image ? (
+                              <Image
+                                src={item.image}
+                                alt={item.name}
+                                fill
+                                className="object-cover"
+                              />
+                            ) : (
+                              <Image
+                                src={`/placeholder.svg?height=300&width=400&text=${encodeURIComponent(item.name)}`}
+                                alt={item.name}
+                                fill
+                                className="object-cover"
+                              />
+                            )}
+                            {item.vegetarian && (
+                              <div className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                Veg
+                              </div>
+                            )}
+                          </div>
                           <CardContent className="p-4 md:p-6">
-                            <Skeleton className="h-6 w-3/4 mb-2" />
-                            <Skeleton className="h-4 w-full mb-1" />
-                            <Skeleton className="h-4 w-full mb-1" />
-                            <Skeleton className="h-4 w-2/3 mb-4" />
-                            <Skeleton className="h-6 w-1/4" />
+                            <div className="flex justify-between items-start mb-2">
+                              <h3 className="text-xl font-bold text-gray-800">{item.name}</h3>
+                              <div className="flex">
+                                {Array(item.spice_level)
+                                  .fill(0)
+                                  .map((_, i) => (
+                                    <span key={i} className="text-red-500">
+                                      🌶️
+                                    </span>
+                                  ))}
+                              </div>
+                            </div>
+                            <p className="text-gray-600 mb-4">{item.description}</p>
                           </CardContent>
                         </Card>
-                      ))
-                  : // Actual menu items
-                    (category.id === "all" ? menuItems : filteredItems).map((item) => (
-                      <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                        <div className="relative h-48 w-full bg-amber-100">
-                          {item.image ? (
-                            <Image
-                              src={item.image || "/placeholder.svg"}
-                              alt={item.name}
-                              fill
-                              className="object-cover"
-                            />
-                          ) : (
-                            <Image
-                              src={`/placeholder.svg?height=300&width=400&text=${encodeURIComponent(item.name)}`}
-                              alt={item.name}
-                              fill
-                              className="object-cover"
-                            />
-                          )}
-                          {item.vegetarian && (
-                            <div className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                              Veg
-                            </div>
-                          )}
-                        </div>
-                        <CardContent className="p-4 md:p-6">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-xl font-bold text-gray-800">{item.name}</h3>
-                            <div className="flex">
-                              {Array(item.spice_level)
-                                .fill(0)
-                                .map((_, i) => (
-                                  <span key={i} className="text-red-500">
-                                    🌶️
-                                  </span>
-                                ))}
-                            </div>
-                          </div>
-                          <p className="text-gray-600 mb-4">{item.description}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
-              </div>
+                      ))}
+                </div>
+              )}
             </TabsContent>
           ))}
         </Tabs>
