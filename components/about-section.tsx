@@ -8,7 +8,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/about.jpg"
                 alt="Our chef preparing authentic Indian cuisine"
                 width={600}
                 height={400}
