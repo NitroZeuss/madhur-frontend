@@ -238,7 +238,7 @@ export default function ContactSection() {
                       <Phone className="h-5 w-5 text-orange-600 mr-3 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-800">Phone</h4>
-                        <p className="text-gray-600">(123) 456-7890</p>
+                        <p className="text-gray-600">+91 9822739077</p>
                       </div>
                     </div>
 
@@ -246,7 +246,7 @@ export default function ContactSection() {
                       <Mail className="h-5 w-5 text-orange-600 mr-3 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-800">Email</h4>
-                        <p className="text-gray-600">info@madhurcaterers.com</p>
+                        <p className="text-gray-600">madhurcaterersnagpur@gmail.com</p>
                       </div>
                     </div>
 
@@ -254,7 +254,7 @@ export default function ContactSection() {
                       <MapPin className="h-5 w-5 text-orange-600 mr-3 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-800">Address</h4>
-                        <p className="text-gray-600">1234 Catering Street, City, Country</p>
+                        <p className="text-gray-600">Ram Nagar Nagpur, Mahashtra</p>
                       </div>
                     </div>
                   </div>
