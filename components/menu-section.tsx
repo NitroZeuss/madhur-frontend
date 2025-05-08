@@ -38,64 +38,7 @@ export default function MenuSection() {
         console.error("Error fetching menu items:", err)
         setError("Unable to load menu items. Please try again later.")
 
-        // Fallback data for preview
-        setMenuItems([
-          {
-            id: 1,
-            name: "Butter Chicken",
-            description: "Tender chicken cooked in a rich, creamy tomato sauce with aromatic spices.",
-            category: "main",
-            vegetarian: false,
-            spice_level: 2,
-          },
-          {
-            id: 2,
-            name: "Paneer Tikka",
-            description: "Cubes of cottage cheese marinated in yogurt and spices, grilled to perfection.",
-            category: "appetizer",
-            vegetarian: true,
-            spice_level: 1,
-          },
-          {
-            id: 3,
-            name: "Vegetable Biryani",
-            description: "Fragrant basmati rice cooked with mixed vegetables and aromatic spices.",
-            category: "main",
-            vegetarian: true,
-            spice_level: 2,
-          },
-          {
-            id: 4,
-            name: "Gulab Jamun",
-            description: "Soft milk solids dumplings soaked in rose-flavored sugar syrup.",
-            category: "dessert",
-            vegetarian: true,
-            spice_level: 1,
-          },
-          {
-            id: 5,
-            name: "Chicken Tikka",
-            description: "Boneless chicken pieces marinated in spices and yogurt, grilled in a tandoor.",
-            category: "appetizer",
-            vegetarian: false,
-            spice_level: 2,
-          },
-          {
-            id: 6,
-            name: "Palak Paneer",
-            description: "Cottage cheese cubes in a creamy spinach sauce flavored with spices.",
-            category: "main",
-            vegetarian: true,
-            spice_level: 1,
-          },
-        ])
-        setLoading(false)
-      }
-    }
-
-    fetchMenuItems()
-  }, [])
-
+        
   const categories = [
     { id: "all", name: "All Items" },
     { id: "Starters", name: "Starters" },
