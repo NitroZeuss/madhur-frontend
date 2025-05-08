@@ -55,8 +55,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-gray-800 mb-4">Contact Us</h3>
             <address className="not-italic text-gray-600 space-y-2">
-              <p>123 Spice Avenue</p>
-              <p>Flavor District, FD 12345</p>
+              <p>Ram nagar nagpur</p>
+              <p></p>
               <p className="mt-4">Phone: +91 9822739077</p>
               <p>Email: madhurcaterersnagpur@gmail.com</p>
             </address>
