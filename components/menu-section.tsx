@@ -37,8 +37,12 @@ export default function MenuSection() {
       } catch (err) {
         console.error("Error fetching menu items:", err)
         setError("Unable to load menu items. Please try again later.")
+      }
+    }
 
-        
+    fetchMenuItems()
+  }, [])
+
   const categories = [
     { id: "all", name: "All Items" },
     { id: "Starters", name: "Starters" },
