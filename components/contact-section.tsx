@@ -34,7 +34,7 @@ export default function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/def/contact/", {
+      const response = await fetch("https://madhur.onrender.com/def/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -5,21 +5,21 @@ import { Quote } from "lucide-react"
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Priya Sharma",
+      name: "Nishant Sahasrabudhe",
       role: "Wedding Client",
       content:
         "Madhur Caterers handled our wedding and the food was absolutely amazing! Our guests couldn't stop talking about the butter chicken and naan. The service was impeccable and the presentation was beautiful.",
       avatar: "PS",
     },
     {
-      name: "Michael Johnson",
+      name: "Rahul Sharma",
       role: "Corporate Event Manager",
       content:
         "We've used Madhur Caterers for multiple corporate events and they never disappoint. The variety of dishes they offer satisfies everyone's preferences, and their attention to detail is outstanding.",
       avatar: "MJ",
     },
     {
-      name: "Anita Patel",
+      name: "Vaibhav Chodhary",
       role: "Birthday Celebration",
       content:
         "The team at Madhur Caterers made my 50th birthday celebration truly special. The food was authentic and reminded me of my grandmother's cooking. Their staff was professional and friendly.",
