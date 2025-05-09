@@ -111,21 +111,16 @@ export default function MenuSection() {
                     : (category.id === "all" ? menuItems : filteredItems).map((item) => (
                         <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                           <div className="relative h-48 w-full bg-amber-100">
-                            {item.image ? (
-                              <Image
-                                src={item.image}
-                                alt={item.name}
-                                fill
-                                className="object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={`/placeholder.svg?height=300&width=400&text=${encodeURIComponent(item.name)}`}
-                                alt={item.name}
-                                fill
-                                className="object-cover"
-                              />
-                            )}
+                            <Image
+                              src={
+                                item.image
+                                  ? `https://res.cloudinary.com/dxtkvs2an/${item.image}`
+                                  : `/placeholder.svg?height=300&width=400&text=${encodeURIComponent(item.name)}`
+                              }
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                            />
                             {item.vegetarian && (
                               <div className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                                 Veg
