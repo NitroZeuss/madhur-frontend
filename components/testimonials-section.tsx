@@ -9,21 +9,24 @@ export default function TestimonialsSection() {
       role: "Wedding Client",
       content:
         "Madhur Caterers handled our wedding and the food was absolutely amazing! Our guests couldn't stop talking about the butter chicken and naan. The service was impeccable and the presentation was beautiful.",
-      avatar: "PS",
+      avatarSrc: "/nishant.jpg",
+      avatarFallback: "NS",
     },
     {
-      name: "Rahul Sharma",
+      name: "Milind Joshi",
       role: "Corporate Event Manager",
       content:
         "We've used Madhur Caterers for multiple corporate events and they never disappoint. The variety of dishes they offer satisfies everyone's preferences, and their attention to detail is outstanding.",
-      avatar: "MJ",
+      avatarSrc: "/ninda.jpg",
+      avatarFallback: "RS",
     },
     {
       name: "Vaibhav Chodhary",
       role: "Birthday Celebration",
       content:
         "The team at Madhur Caterers made my 50th birthday celebration truly special. The food was authentic and reminded me of my grandmother's cooking. Their staff was professional and friendly.",
-      avatar: "AP",
+      avatarSrc: "/vaibhav.jpg",
+      avatarFallback: "VC",
     },
   ]
 
@@ -45,8 +48,8 @@ export default function TestimonialsSection() {
                 <p className="text-gray-600 mb-4 md:mb-6 italic text-sm md:text-base">"{testimonial.content}"</p>
                 <div className="flex items-center">
                   <Avatar className="h-12 w-12 mr-4">
-                    <AvatarImage src={`/placeholder.svg?text=${testimonial.avatar}`} alt={testimonial.name} />
-                    <AvatarFallback className="bg-orange-100 text-orange-600">{testimonial.avatar}</AvatarFallback>
+                    <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} />
+                    <AvatarFallback className="bg-orange-100 text-orange-600">{testimonial.avatarFallback}</AvatarFallback>
                   </Avatar>
                   <div>
                     <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
